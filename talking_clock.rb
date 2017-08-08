@@ -80,13 +80,13 @@ class Clock
       regular_time = split_time[0]
       am_or_pm = 'am'
     end
+
     hours_place = hour_conversions[regular_time]
     "#{hours_place}"
 
     # "#{hour_conversions[regular_time]} #{tens_minutes_conversions[split_time[1][0]]} #{ones_minutes_conversions[1][1]} #{am_or_pm}"
     # convert mm to words
   end
-  binding.pry
 end
 
 c = Clock.new

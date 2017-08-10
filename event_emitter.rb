@@ -25,21 +25,12 @@
 
 
 class EventEmitter
-  attr_reader :blocks
-
-  def initialize
-    @blocks = {}
-  end
 
   def on(key, block)
-    blocks[key] = block
+    
   end
 
   def trigger(key)
-    returned_blocks = []
-    blocks.each do |block|
-      returned_blocks << block
-    end
-    returned_blocks
+
   end
 end

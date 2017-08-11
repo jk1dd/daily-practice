@@ -4,5 +4,5 @@
 # sponge_meme("stop Making spongebob Memes!") # => 'StOp mAkInG SpOnGeBoB MeMeS!'
 
 def sponge_meme(sentence)
-  sentence.downcase.chars
+  sentence.downcase.chars.each_with_index.map {|letter, index| index.even? ? letter.upcase : letter}.join
 end

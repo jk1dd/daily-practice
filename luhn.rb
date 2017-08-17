@@ -1,4 +1,4 @@
-# n this Kata, you will implement The Luhn Algorithm, which is used to help validate credit card numbers.
+require 'pry'# n this Kata, you will implement The Luhn Algorithm, which is used to help validate credit card numbers.
 #
 # Given a positive integer of up to 16 digits, return true if it is a valid credit card number, and false if it is not.
 #
@@ -29,11 +29,29 @@
 
 def validate(n)
   # reverse the number
+  reversed_number_string = n.to_s.reverse.chars
   # double every other number
+  doubled = reversed_number_string.map.with_index do |number, index|
+    if index % 2 != 0
+      number.to_i * 2
+    else
+      number.to_i
+    end
+  end
   # check to see if each number is > 10
+  cleaned = doubled.map do |number|
+    if number / 10 >= 1
+      number - 9
+    else
+      number
+    end
+  end
+  # binding.pry
     # if so, subtract 9
     # if not, leave as is
   # sum the numbers (reduce), check to see if divisbile by 10, return boolean
+  cleaned.reduce(:+) % 10 == 0
 end
 
-validate(1234567890123456)
+p validate(1234567890123456)
+p validate(29304823012893109)

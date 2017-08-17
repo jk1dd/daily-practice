@@ -29,28 +29,57 @@ require 'pry'# n this Kata, you will implement The Luhn Algorithm, which is used
 
 def validate(n)
   # reverse the number
-  reversed_number_string = n.to_s.reverse.chars
+  reversed = reverser(n)
+  cleaned = cleaner(reversed)
+  checker(cleaned)
+  # reversed_number_string = n.to_s.reverse.chars
   # double every other number
-  doubled = reversed_number_string.map.with_index do |number, index|
-    if index % 2 != 0
-      number.to_i * 2
-    else
-      number.to_i
-    end
-  end
+  # doubler(reversed_number_string)
+  # doubled = reversed_number_string.map.with_index do |number, index|
+  #   if index % 2 != 0
+  #     number.to_i * 2
+  #   else
+  #     number.to_i
+  #   end
+  # end
   # check to see if each number is > 10
-  cleaned = doubled.map do |number|
-    if number / 10 >= 1
-      number - 9
-    else
-      number
-    end
+  # cleaned = doubler(reversed).map do |number|
+  #   if number / 10 >= 1
+  #     number - 9
+  #   else
+  #     number
+  #   end
+  # end
+  # # binding.pry
+  #   # if so, subtract 9
+  #   # if not, leave as is
+  # # sum the numbers (reduce), check to see if divisbile by 10, return boolean
+  # cleaned.reduce(:+) % 10 == 0
+end
+
+def cleaner(reversed_string)
+  doubler(reversed_string).map do |number|
+    number / 10 >= 1 ? (number-9) : number
   end
-  # binding.pry
-    # if so, subtract 9
-    # if not, leave as is
-  # sum the numbers (reduce), check to see if divisbile by 10, return boolean
-  cleaned.reduce(:+) % 10 == 0
+end
+
+def checker(cleaned_numbers)
+  cleaned_numbers.reduce(:+) % 10 == 0
+end
+
+def reverser(numbers)
+  numbers.to_s.reverse.chars
+end
+
+def doubler(number_string)
+  number_string.map.with_index do |number, index|
+    index % 2 != 0 ? number.to_i * 2 : number.to_i
+    # if index % 2 != 0
+    #   number.to_i * 2
+    # else
+    #   number.to_i
+    # end
+  end
 end
 
 p validate(1234567890123456)

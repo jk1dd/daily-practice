@@ -27,8 +27,21 @@
 #
 # 4 = M-Male or F-Female
 
+require 'date'
+
 def driver(data)
   constructed_license_number = ""
-  data[2].upcase.ljust(5, '9')
-  data[3].split('-')[2][2]
+  first = data[2].upcase.ljust(5, '9')
+  second = data[3].split('-')[2][2]
+  # Date.parse(data[3]).month.to_s
+  if data[4] == "M"
+    third = Date.parse(data[3]).month.to_s.rjust(2, '0')
+  else
+    third = Date.parse(data[3]).month.to_s.rjust(2, '5')
+  end
+  fourth = Date.parse(data[3]).day.to_s.rjust(2, 0)
+  fifth = data[3].split('-')[2][-1]
+  sixth = data[0][0] + data[1][0] # account for missing mid name
+  seventh = '9'
+  eigth = 'AA'
 end

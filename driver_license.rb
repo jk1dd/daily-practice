@@ -30,7 +30,7 @@
 require 'date'
 
 def driver(data)
-  first = data[2].upcase.ljust(5, '9')
+  first = data[2][0..4].upcase.ljust(5, '9')
   second = data[3].split('-')[2][2]
   # Date.parse(data[3]).month.to_s
 
@@ -50,7 +50,7 @@ def driver(data)
   if data[1] == ""
     sixth = data[0][0] + '9'
   else
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     sixth = data[0][0] + data[1][0]
   end
   seventh = '9'
@@ -59,5 +59,79 @@ def driver(data)
 end
 
 # data = ["John","James","Smith","01-Jan-2000","M"]
-data = ["Johanna","","Gibbs","13-Dec-1981","F"]
+# data = ["Johanna","","Gibbs","13-Dec-1981","F"]
+data = ["Johanna","","Johnson","13-Dec-1981","F"]
 p driver(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# require 'date'
+#
+# def driver(data)
+#   surname(data[2]) +
+#     birth_decade(data[3]) +
+#     birth_month(data[3], data[4]) +
+#     birth_day_in_month(data[3]) +
+#     birth_year_digit(data[3]) +
+#     initials(data[0], data[1]) +
+#     arbitrary() +
+#     checkdigits()
+# end
+#
+# def surname(name)
+#   name[0..4].upcase.ljust(5, '9')
+# end
+#
+# def birth_decade(birthday)
+#   birthday[-2]
+# end
+#
+# def birth_month(birthday, gender)
+#   month = Date::ABBR_MONTHNAMES
+#     .index(birthday[3..5])
+#     .to_s
+#     .rjust(2, '0')
+#   if gender == 'F'
+#     return (month[0].to_i + 5).to_s + month[1]
+#   end
+#   return month
+# end
+#
+# def birth_day_in_month(birthday)
+#   birthday[0..1]
+# end
+#
+# def birth_year_digit(birthday)
+#   birthday[-1]
+# end
+#
+# def initials(forename, middlename)
+#   forename[0] + middlename[0..0].rjust(1, '9')
+# end
+#
+# def arbitrary()
+#   '9'
+# end
+#
+# def checkdigits()
+#   'AA'
+# end

@@ -42,9 +42,10 @@ def driver(data)
   fourth = Date.parse(data[3]).day.to_s.rjust(2, '0')
   fifth = data[3].split('-')[2][-1]
 
-  if data[1][0] == ""
+  if data[1] == ""
     sixth = data[0][0] + '9'
   else
+    require 'pry'; binding.pry
     sixth = data[0][0] + data[1][0]
   end
   seventh = '9'
@@ -52,5 +53,6 @@ def driver(data)
   constructed_license_number = first + second + third + fourth + fifth + sixth + seventh + eigth
 end
 
-data = ["John","James","Smith","01-Jan-2000","M"]
+# data = ["John","James","Smith","01-Jan-2000","M"]
+data = ["Johanna","","Gibbs","13-Dec-1981","F"]
 p driver(data)

@@ -37,8 +37,13 @@ def driver(data)
   if data[4] == "M"
     third = Date.parse(data[3]).month.to_s.rjust(2, '0')
   else
-    third = Date.parse(data[3]).month.to_s.rjust(2, '5')
+    if Date.parse(data[3]).month >= 10
+      third = "6" + Date.parse(data[3]).month.to_s[1]
+    else
+      third = Date.parse(data[3]).month.to_s.rjust(2, '5') # account for adding 5 to female driver first digit
+    end
   end
+
   fourth = Date.parse(data[3]).day.to_s.rjust(2, '0')
   fifth = data[3].split('-')[2][-1]
 

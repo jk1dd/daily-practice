@@ -63,6 +63,8 @@ end
 data = ["Johanna","","Johnson","13-Dec-1981","F"]
 p driver(data)
 
+# how to refactor this
+
 
 
 

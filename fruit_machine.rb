@@ -81,3 +81,7 @@
 #
 #
 # result == 50
+
+def fruit([])
+
+end

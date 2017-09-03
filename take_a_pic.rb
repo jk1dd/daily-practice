@@ -10,10 +10,15 @@
 # sort_photos["2016.img1"]) ==["2016.img1","2016.img2"]
 
 def sort_photos(pics)
-  sorted_pics = pics.sort.last(5) # need to account for teen numbers
-  final_pic = sorted_pics.last[0..7] + (sorted_pics.last.split('img')[1].to_i + 1).to_s
+  pic_pairs = pics.map { |pic| pic.split('img')  }
+  sorted = pic_pairs.map { |pair| [pair[0], pair[1].to_i]}.sort
+  reformed = sorted.map { |pair| pair[0] + 'img' + pair[1].to_s  }.last(5)
+  # sorted_pics = pics.sort.last(5) # need to account for numbers greater than 10
+  final_pic = reformed.last[0..7] + (reformed.last.split('img')[1].to_i + 1).to_s
+  # final_pic = sorted_pics.last[0..7] + (sorted_pics.last.split('img')[1].to_i + 1).to_s
   # final_pic = sorted_pics.last[0..7] + (sorted_pics.last[-1].to_i + 1).to_s
-  sorted_pics << final_pic
+  reformed << final_pic
+  # sorted_pics << final_pic
 end
 
 p sort_photos(["2016.img1","2016.img2","2015.img3","2016.img4","2013.img5"])

@@ -12,13 +12,28 @@
 
 def oddOne(arr)
 
+  relevant_index = 0
+  changed = false
   arr.each_with_index do |n, i|
-    relevant_index = 0
     if n.odd?
       relevant_index = i
+      changed = true
     end
   end
-  if relevant_index == nil
+  if relevant_index == 0 && changed == false
     -1
+  else
+    relevant_index
   end
 end
+
+p oddOne([4,-8,98,-12,-7,90,100])
+p oddOne([2,4,6,8])
+
+
+
+
+# def oddOne(arr)
+#   arr.each_with_index{|x,i| return i if x.odd?}
+#   -1
+# end

@@ -33,6 +33,7 @@ p oddOne([2,4,6,8])
 
 
 
+
 # def oddOne(arr)
 #   arr.each_with_index{|x,i| return i if x.odd?}
 #   -1

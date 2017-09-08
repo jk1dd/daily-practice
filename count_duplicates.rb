@@ -15,13 +15,14 @@ require 'pry'
 
 def duplicate_count(text)
   altered = text.downcase
-  binding.pry
-  counts = Hash.new(0)
-  hash = altered.chars.reduce(Hash.new){|counts, n| counts[n]+=1}
-  puts counts
+  # binding.pry
+  # counts = Hash.new(0)
+  counts = altered.chars.reduce(Hash.new(0)){|counts, n| counts[n]+=1; counts}
+  counts.keep_if { |k,v| v > 1 }.count
+  # puts counts
 end
 
-duplicate_count('aA11')
+p duplicate_count('aA11')
 
 # def duplicate_count(text)
 #   altered = text.downcase

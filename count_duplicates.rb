@@ -16,7 +16,8 @@ require 'pry'
 def duplicate_count(text)
   altered = text.downcase
   binding.pry
-  hash = altered.chars.reduce(Hash.new){|counts, n| counts[n]+=1; counts}
+  counts = Hash.new(0)
+  hash = altered.chars.reduce(Hash.new){|counts, n| counts[n]+=1}
   puts counts
 end
 

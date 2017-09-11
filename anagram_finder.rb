@@ -18,10 +18,20 @@ def anagrams(word, words)
   sorted_words = words.map do |word|
     word.chars.sort.join
   end
-  sorted_words.keep_if {|word| word == sorted_test_word}
+
+  anagram_locations = sorted_words.map.with_index do |word, index|
+    if word == sorted_test_word
+      index
+    end
+  end.compact
+  # sorted_words.keep_if.with_index {|word, index| word == sorted_test_word}
+  anagrams = []
+  anagram_locations.each do |location|
+    anagrams << words[location]
+  end
+  anagrams
 end
 
-# this solves it but leaves words' letters in the wrong order...
 
 p anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])
 p anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer'])

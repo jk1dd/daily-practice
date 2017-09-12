@@ -17,7 +17,8 @@ def find_2nd_largest(arr)
   if arr.count == 1
     return arr.last
   else
-    cleaned_numbers = arr.select {|item| item.kind_of? Fixnum || Bignum}.sort
+    # cleaned_numbers = arr.select {|item| item.kind_of? Fixnum || Bignum}.sort
+    cleaned_numbers = arr.select {|item| item.kind_of? Integer}.sort
     cleaned_numbers.max == cleaned_numbers[-2] ? nil : cleaned_numbers[-2]
   end
 end

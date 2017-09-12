@@ -19,3 +19,27 @@
 # candies ([]) # return -1
 #
 # candies ([1,6]) # return 5
+
+
+def candies(amounts)
+  if amounts.count == 1 || amounts.count == 0
+    return -1
+  else
+    given_out = 0
+    amounts.each do |amount|
+      given_out += (amounts.max - amount)
+    end
+    given_out
+  end
+end
+
+p candies([1,2,4,6])
+p candies([5,8,6,4])
+
+
+# good refactor would be
+
+# def candies(s)
+#   return -1 if s.size <= 1
+#   s.inject(0) { |sum, n| sum + (s.max - n) }
+# end

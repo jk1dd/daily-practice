@@ -36,3 +36,11 @@ end
 p anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])
 p anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer'])
 p anagrams('laser', ['lazing', 'lazy',  'lacer'])
+
+
+# def anagrams(word, words)
+#   sorted_chars = word.chars.sort
+#   words.select { |word| word.chars.sort == sorted_chars }
+# end
+
+much simpler

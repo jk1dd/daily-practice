@@ -43,4 +43,4 @@ p anagrams('laser', ['lazing', 'lazy',  'lacer'])
 #   words.select { |word| word.chars.sort == sorted_chars }
 # end
 
-much simpler
+# much simpler

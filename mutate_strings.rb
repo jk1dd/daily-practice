@@ -16,5 +16,25 @@
 # store (puts?) the intermediate strings
 
 def mutate_my_strings(s1,s2)
-  #your code here
+  puts s1
+  s1.chars.each_with_index do |n, i|
+    s1[i] = s2[i]
+    puts s1
+  end
+  # all
 end
+
+# def mutate_my_strings(s1,s2)
+#   all = s1
+#   s1.chars.each_with_index do |n, i|
+#     s1[i] = s2[i]
+#     # all << s1
+#   end
+#   # all
+# end
+
+# def mutate_my_strings(s1,s2)
+#   s1.each_char {|c| c = s2}
+# end
+
+p mutate_my_strings("right wrong", "wrong right")

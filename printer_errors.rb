@@ -23,10 +23,15 @@
 #   end
 # end
 
+# def printer_error(s)
+#   good_and_bads = s.chars.sort.join.split('m')
+#   # require 'pry'; binding.pry
+#   "#{good_and_bads[1].length}/#{s.length}"
+# end
+
 def printer_error(s)
-  good_and_bads = s.chars.sort.join.split('m')
-  # require 'pry'; binding.pry
-  "#{good_and_bads[1].length}/#{s.length}"
+  error_count = s.chars.count {|i| i > 'm'}
+  "#{error_count}/#{s.length}"
 end
 
 s="aaaxbbbbyyhwawiwjjjwwm"

@@ -36,3 +36,9 @@ end
 
 s="aaaxbbbbyyhwawiwjjjwwm"
 p printer_error(s)
+
+
+# some new syntax
+# def printer_error(s)
+#   "#{s.count('n-z')}/#{s.length}"
+# end

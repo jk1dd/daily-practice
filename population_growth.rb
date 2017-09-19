@@ -32,31 +32,38 @@ require 'pry'
 
 # def nb_year(p0, percent, aug, p)
 #   year_count = 0
-#   while p0 <= p
+#   while p0 <= p do
 #     p0 = p0 + (p0 * (percent/100).to_f) + aug
-#     year_count =+ 1
-#     binding.pry
-#   end
-#   year_count
-# end
-
-# def nb_year(p0, percent, aug, p)
-#   year_count = 0
-#   new_pop = p0
-#   until new_pop >= p
-#     new_pop += (new_pop * (percent/100.to_f)) + aug
 #     year_count =+ 1
 #     # binding.pry
 #   end
 #   year_count
-#   binding.pry
 # end
 
 def nb_year(p0, percent, aug, p)
-  # t = (log(p/p0))/percent
-  percent_decimal = percent/100.to_f
+  year_count = 0
+  new_pop = p0
+  until new_pop >= p do
+    new_pop += (new_pop * (percent/100.to_f)) + aug
+    year_count =+ 1
+    # binding.pry
+  end
+  year_count
   # binding.pry
-  time = Math.log(p/p0)/percent_decimal
 end
+
+# def nb_year(p0, percent, aug, p)
+#   # t = (log(p/p0))/percent
+#   percent_decimal = percent/100.to_f
+#   # binding.pry
+#   time = Math.log(p/p0)/percent_decimal
+# end
+
+# def nb_year(p0, percent, aug, p)
+#   # t = (log(p/p0))/percent
+#   percent_decimal = percent/100.to_f
+#   # binding.pry
+#   time = Math.log(p/p0)/(Math.log(1 + percent_decimal))
+# end
 
 p nb_year(1500, 5, 100, 5000)

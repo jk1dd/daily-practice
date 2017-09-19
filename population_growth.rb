@@ -40,12 +40,23 @@ require 'pry'
 #   year_count
 # end
 
+# def nb_year(p0, percent, aug, p)
+#   year_count = 0
+#   new_pop = p0
+#   until new_pop >= p do
+#     new_pop += (new_pop * (percent/100.to_f)) + aug
+#     year_count += 1
+#     # binding.pry
+#   end
+#   year_count
+#   # binding.pry
+# end
+
 def nb_year(p0, percent, aug, p)
   year_count = 0
-  new_pop = p0
-  until new_pop >= p do
-    new_pop += (new_pop * (percent/100.to_f)) + aug
-    year_count =+ 1
+  until p0 >= p do
+    p0 += (p0 * (percent/100.to_f)) + aug
+    year_count += 1
     # binding.pry
   end
   year_count

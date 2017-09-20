@@ -63,6 +63,8 @@ def nb_year(p0, percent, aug, p)
   # binding.pry
 end
 
+# TEA-6540-WJGM
+
 # def nb_year(p0, percent, aug, p)
 #   # t = (log(p/p0))/percent
 #   percent_decimal = percent/100.to_f

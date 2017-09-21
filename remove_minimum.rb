@@ -15,12 +15,22 @@
 # remove_smallest([1,2,3,4,5]) = [2,3,4,5]
 # remove_smallest([5,3,2,1,4]) = [5,3,2,4]
 # remove_smallest([2,2,1,2,1]) = [2,2,2,1]
+
+# def remove_smallest(numbers)
+#   worst_exhibition = numbers.min
+#   numbers.map do |n|
+#     n unless n == worst_exhibition # but need to account for just taking the first instance of it
+#   end.compact
+# end
+
+
 def remove_smallest(numbers)
+  return [] if numbers == []
   worst_exhibition = numbers.min
-  numbers.map do |n|
-    n unless n == worst_exhibition
-  end.compact
+  numbers.delete_at(numbers.index(worst_exhibition)) # but this mutates the array. had to look up delete at
+  numbers
 end
 
 p remove_smallest([1,2,3,4,5])
 p remove_smallest([5,3,2,1,4])
+p remove_smallest([])

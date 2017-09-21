@@ -21,8 +21,40 @@
 # [b][r][b][r][b]
 # [r][b][r][b][r]
 
+# build the first line
+# put it into checkerboard string
+# build the second, put it in
+
+require 'pry'
+
+# def checkerboard(size)
+#   return "" if size <= 0
+#   completed_board = ""
+#
+#   first_line = size.times do |n|
+#     if n.odd?
+#       completed_board << "[r]"
+#     else
+#       completed_board << "[b]"
+#     end
+#   end
+#
+#   # binding.pry
+# end
+
 def checkerboard(size)
   return "" if size <= 0
-  
+  completed_board = ""
 
+  first_line = size.times do |n|
+    if n.odd?
+      completed_board << "[r]"
+    else
+      completed_board << "[b]"
+    end
+  end
+
+  # binding.pry
 end
+
+p checkerboard(5)

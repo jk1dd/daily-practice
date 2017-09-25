@@ -2,11 +2,22 @@
 
 require 'pry'
 
+# def remainder(a, b)
+#   # your mission, should you choose to accept it...
+#   # binding.pry
+#   return nil if a == 0 || b == 0
+#   a > b ? a % b : b % a
+# end
+
 def remainder(a, b)
-  # your mission, should you choose to accept it...
-  # binding.pry
-  return nil if a == 0 || b == 0
-  a > b ? a % b : b % a
+  sortz = [a,b].sort
+  if sortz[0] == 0
+    return nil
+  elsif sortz[1] == nil || sortz[0] == nil
+    return nil
+  else
+    sortz[1] % sortz[0]
+  end
 end
 
 p remainder(17,5)
@@ -15,3 +26,4 @@ p remainder(10,0)
 p remainder(0,0)
 p remainder(-10,90)
 p remainder(-10,-9)
+p remainder(nil, nil)

@@ -3,7 +3,8 @@
 // Return True if yes, False otherwise :)
 
 function hero(bullets, dragons) {
-  if (dragons - (bullets/2) >= 0) {
+  if (dragons - (bullets/2) <= 0) {
+  // if (((dragons*2) - bullets) <= 0) {
     return true
   } else {
     return false
@@ -12,3 +13,15 @@ function hero(bullets, dragons) {
 
 console.log(hero(2, 1))
 console.log(hero(2, 2))
+
+console.log(hero(10, 5));
+console.log(hero(7, 4));
+console.log(hero(4, 5));
+console.log(hero(100, 40));
+console.log(hero(1500, 751));
+console.log(hero(0, 1));
+
+
+// function hero(bullets, dragons){
+//   return bullets >= dragons * 2
+// }
